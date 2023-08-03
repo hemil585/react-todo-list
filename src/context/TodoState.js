@@ -31,12 +31,19 @@ const TodoState = ({children}) => {
         })
     }
 
+    const clearAllTodos = () => {
+        dispatch({
+            type: 'CLEAR_ALL_TODO'
+        })
+    }
+
   return (
     <TodoContext.Provider value={{
         todos: state.todos,
         addTodo,
         deleteTodo,
-        editTodo
+        editTodo,
+        clearAllTodos
     }}>
         {children}
     </TodoContext.Provider>

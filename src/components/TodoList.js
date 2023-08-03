@@ -7,7 +7,7 @@ const TodoList = () => {
   console.log(todos);
   return (
     <>
-      {todos.map((todo) => {
+      {todos && todos.map((todo) => {
         return (
           <TodoItem
             key={todo.id}

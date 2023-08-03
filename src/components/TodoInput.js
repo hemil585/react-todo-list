@@ -14,18 +14,20 @@ const TodoInput = () => {
   };
 
   const handleAddTodo = () => {
-    if (editingTodoID) {
-      editTodo({
-        id: editingTodoID,
-        todo: todo,
-      });
-    } else {
-      addTodo({
-        id: nanoid(),
-        todo: todo,
-      });
+    if (todo !== "") {
+      if (editingTodoID) {
+        editTodo({
+          id: editingTodoID,
+          todo: todo,
+        });
+      } else {
+        addTodo({
+          id: nanoid(),
+          todo: todo,
+        });
+      }
+      setTodo("");
     }
-    setTodo("");
   };
 
   const handleKeyDown = (e) => {

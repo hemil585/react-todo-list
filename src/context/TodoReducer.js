@@ -22,6 +22,11 @@ const TodoReducer = (state, action) => {
         ),
         editingTodoID: action.payload.id,
       };
+      case "CLEAR_ALL_TODO":
+        return {
+          ...state,
+          todos: []
+        }
     default:
       return state;
   }

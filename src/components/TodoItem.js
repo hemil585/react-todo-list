@@ -30,14 +30,14 @@ const TodoItem = ({ id, todo, deleteTodo, editTodo }) => {
             type="text"
             value={editedTodo}
             onChange={handleEditChange}
-            className="edit-input"
+            className= {`edit-input ${editedTodo === "" ? "err" : ""}`}
           />
         ) : (
           <li>{todo}</li>
         )}
       </div>
       <div className="buttons">
-        {isEditing ? (
+        {isEditing && editedTodo !== "" ? (
           <AiOutlineCheck
             size={"2.4rem"}
             onClick={handleSaveClick}
